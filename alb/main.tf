@@ -60,3 +60,28 @@ resource "aws_alb_listener" "https" {
     type             = "forward"
   }
 }
+
+resource "aws_security_group" "ingress" {
+  ingress {
+    cidr_blocks = ["${split(",", var.ingress_allowed_cidr_blocks)}"]
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+  }
+
+  ingress {
+    cidr_blocks = ["${split(",", var.ingress_allowed_cidr_blocks)}"]
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+  }
+}
+
+resource "aws_security_group" "egress" {
+  egress {
+    cidr_blocks = ["${split(",", var.egress_allowed_cidr_blocks)}"]
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+  }
+}

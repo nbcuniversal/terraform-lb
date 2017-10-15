@@ -23,3 +23,7 @@ variable "vpc_id" {}
 variable "lifecycle_create_before_destroy" {
   default = true
 }
+
+variable "ingress_allowed_cidr_blocks" {
+  default = "0.0.0.0/0"
+}

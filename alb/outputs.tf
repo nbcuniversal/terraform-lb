@@ -17,3 +17,7 @@ output "http_listener_arn" {
 output "https_listener_arn" {
   value = "${aws_alb_listener.https.arn}"
 }
+
+output "security_group_list" {
+  value = "${aws_alb_listener.ingress.id},${aws_alb_listener.egress.id}"
+}
