@@ -19,5 +19,5 @@ output "https_listener_arn" {
 }
 
 output "security_group_list" {
-  value = "${aws_alb_listener.ingress.id},${aws_alb_listener.egress.id}"
+  value = "${aws_security_group.ingress.id},${aws_security_group.egress.id}"
 }
