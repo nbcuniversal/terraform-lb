@@ -23,7 +23,7 @@ resource "aws_alb" "main" {
   }
 
   lifecycle {
-    create_before_destroy = "${var.lifecycle_create_before_destroy}"
+    create_before_destroy = true
   }
 }
 
