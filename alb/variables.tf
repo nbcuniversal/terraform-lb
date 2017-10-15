@@ -23,3 +23,7 @@ variable "vpc_id" {}
 variable "ingress_allowed_cidr_blocks" {
   default = "0.0.0.0/0"
 }
+
+variable "egress_allowed_cidr_blocks" {
+  default = "0.0.0.0/0"
+}
